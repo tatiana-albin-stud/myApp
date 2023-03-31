@@ -15,20 +15,14 @@
     {
       "text": "Write code",
       "day": "23.95.2023",
-      "reminder": false,
+      "reminder": true,
       "id": 4
     },
     {
       "text": "update OS",
       "day": "today, 16 pm",
-      "reminder": false,
-      "id": 5
-    },
-    {
-      "text": "mu task",
-      "day": "7 am, 15 april",
       "reminder": true,
-      "id": 6
+      "id": 5
     }
   ]
 }
