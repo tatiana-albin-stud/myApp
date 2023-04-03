@@ -27,6 +27,7 @@ const AddTask = ({ onAdd }) => {
         <input
           type='text'
           placeholder='Add Task'
+          style={{ backgroundColor: '#64C5E6'}}
           value={text}
           onChange={(e) => setText(e.target.value)}
         />
@@ -36,6 +37,7 @@ const AddTask = ({ onAdd }) => {
         <input
           type='text'
           placeholder='Add Day & Time'
+          style={{ backgroundColor: '#64C5E6'}}
           value={day}
           onChange={(e) => setDay(e.target.value)}
         />

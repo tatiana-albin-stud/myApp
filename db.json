@@ -1,28 +1,10 @@
 {
   "tasks": [
     {
-      "id": 2,
-      "text": "Meeting at School",
-      "day": "Feb 6th at 1:30pm",
-      "reminder": true
-    },
-    {
-      "id": 3,
-      "text": "Buy some food",
-      "day": "Feb 8th at 2:30pm",
-      "reminder": true
-    },
-    {
-      "text": "Write code",
-      "day": "23.95.2023",
+      "text": "asd",
+      "day": "dasas",
       "reminder": true,
-      "id": 4
-    },
-    {
-      "text": "update OS",
-      "day": "today, 16 pm",
-      "reminder": true,
-      "id": 5
+      "id": 1
     }
   ]
 }

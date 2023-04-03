@@ -7,8 +7,8 @@
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
-  
+  font-family: 'Helvetica', sans-serif;
+  background-color: rgb(43, 144, 226);
 }
 
 .container {
@@ -16,11 +16,11 @@ body {
   margin: 30px auto;
   overflow: auto;
   min-height: 300px;
-  border: 5px solid rgb(0, 255, 76);
+  border: 5px solid rgb(0, 110, 255);
   
   padding: 30px;
   border-radius: 55px;
-}
+  }
 
 .header {
   display: flex;
@@ -32,14 +32,14 @@ body {
 .btn {
   display: inline-block;
   background: rgb(255, 225, 0);
-  color: #fff;
+  color: rgb(0, 0, 0);
   border: none;
   padding: 10px 20px;
   margin: 5px;
   border-radius: 5px;
   cursor: pointer;
   text-decoration: none;
-  font-size: 15px;
+  font-size: 13px;
   font-family: inherit;
 }
 
@@ -57,14 +57,14 @@ body {
 }
 
 .task {
-  background: #b9c36d;
+  background: #00eeff78;
   margin: 5px;
   padding: 10px 20px;
   cursor: pointer;
 }
 
 .task.reminder {
-  border-left: 5px solid green;
+  border-left: 5px solid rgb(43, 0, 128);
 }
 
 .task h3 {
