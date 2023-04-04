@@ -2,87 +2,87 @@ import { useState, useEffect } from 'react'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import Header from './components/Header'
 import Footer from './components/Footer'
-import Tasks from './components/Tasks'
-import AddTask from './components/AddTask'
+import Products from './components/Products'
+import AddProduct from './components/AddProduct'
 import About from './components/About'
 
 const App = () => {
-  const [showAddTask, setShowAddTask] = useState(false)
-  const [tasks, setTasks] = useState([])
+  const [showAddProduct, setShowAddProduct] = useState(false)
+  const [products, setProducts] = useState([])
 
   useEffect(() => {
-    const getTasks = async () => {
-      const tasksFromServer = await fetchTasks()
-      setTasks(tasksFromServer)
+    const getProducts = async () => {
+      const productsFromServer = await fetchProducts()
+      setProducts(productsFromServer)
     }
 
-    getTasks()
+    getProducts()
   }, [])
 
-  // Fetch Tasks
-  const fetchTasks = async () => {
-    const res = await fetch('http://localhost:5000/tasks')
+  // Fetch Products
+  const fetchProducts = async () => {
+    const res = await fetch('http://localhost:5000/products')
     const data = await res.json()
 
     return data
   }
 
-  // Fetch Task
-  const fetchTask = async (id) => {
-    const res = await fetch(`http://localhost:5000/tasks/${id}`)
+  // Fetch Product
+  const fetchProduct = async (id) => {
+    const res = await fetch(`http://localhost:5000/products/${id}`)
     const data = await res.json()
 
     return data
   }
 
-  // Add Task
-  const addTask = async (task) => {
-    const res = await fetch('http://localhost:5000/tasks', {
+  // Add Product
+  const addProduct = async (product) => {
+    const res = await fetch('http://localhost:5000/products', {
       method: 'POST',
       headers: {
         'Content-type': 'application/json',
       },
-      body: JSON.stringify(task),
+      body: JSON.stringify(product),
     })
 
     const data = await res.json()
 
-    setTasks([...tasks, data])
+    setProducts([...products, data])
 
     // const id = Math.floor(Math.random() * 10000) + 1
-    // const newTask = { id, ...task }
-    // setTasks([...tasks, newTask])
+    // const newProduct = { id, ...product }
+    // setProducts([...products, newProduct])
   }
 
-  // Delete Task
-  const deleteTask = async (id) => {
-    const res = await fetch(`http://localhost:5000/tasks/${id}`, {
+  // Delete Product
+  const deleteProduct = async (id) => {
+    const res = await fetch(`http://localhost:5000/products/${id}`, {
       method: 'DELETE',
     })
     //We should control the response status to decide if we will change the state or not.
     res.status === 200
-      ? setTasks(tasks.filter((task) => task.id !== id))
-      : alert('Error Deleting This Task')
+      ? setProducts(products.filter((product) => product.id !== id))
+      : alert('Error Deleting This Product')
   }
 
-  // Toggle Reminder
-  const toggleReminder = async (id) => {
-    const taskToToggle = await fetchTask(id)
-    const updTask = { ...taskToToggle, reminder: !taskToToggle.reminder }
+  // Toggle Size
+  const toggleSize = async (id) => {
+    const productToToggle = await fetchProduct(id)
+    const updProduct = { ...productToToggle, reminder: !productToToggle.reminder }
 
-    const res = await fetch(`http://localhost:5000/tasks/${id}`, {
+    const res = await fetch(`http://localhost:5000/products/${id}`, {
       method: 'PUT',
       headers: {
         'Content-type': 'application/json',
       },
-      body: JSON.stringify(updTask),
+      body: JSON.stringify(updProduct),
     })
 
     const data = await res.json()
 
-    setTasks(
-      tasks.map((task) =>
-        task.id === id ? { ...task, reminder: data.reminder } : task
+    setProducts(
+      products.map((product) =>
+        product.id === id ? { ...product, reminder: data.reminder } : product
       )
     )
   }
@@ -91,23 +91,23 @@ const App = () => {
     <Router>
       <div className='container'>
         <Header
-          onAdd={() => setShowAddTask(!showAddTask)}
-          showAdd={showAddTask}
+          onAdd={() => setShowAddProduct(!showAddProduct)}
+          showAdd={showAddProduct}
         />
         <Routes>
           <Route
             path='/'
             element={
               <>
-                {showAddTask && <AddTask onAdd={addTask} />}
-                {tasks.length > 0 ? (
-                  <Tasks
-                    tasks={tasks}
-                    onDelete={deleteTask}
-                    onToggle={toggleReminder}
+                {showAddProduct && <AddProduct onAdd={addProduct} />}
+                {products.length > 0 ? (
+                  <Products
+                    products={products}
+                    onDelete={deleteProduct}
+                    onToggle={toggleSize}
                   />
                 ) : (
-                  'No Tasks To Show'
+                  'No Products To Show'
                 )}
               </>
             }

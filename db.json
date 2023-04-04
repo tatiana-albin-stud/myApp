@@ -1,10 +1,15 @@
 {
-  "tasks": [
-    {
-      "text": "asd",
-      "day": "dasas",
-      "reminder": true,
-      "id": 1
-    }
+  "products": [
+    {"id":1,
+    "title":" Backpack, Fits 15 Laptops",
+    "price":109.95,
+    "size" :"XL"
+  },
+  {"id":2,
+    "title":" Jeans",
+    "price":89.95,
+    "size" :"XL"
+  }
+  
   ]
 }
