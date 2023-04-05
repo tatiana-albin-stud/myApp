@@ -3,11 +3,11 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import Products from './components/Products'
-import AddProduct from './components/AddProduct'
+import FindProduct from './components/FindProduct'
 import About from './components/About'
 
 const App = () => {
-  const [showAddProduct, setShowAddProduct] = useState(false)
+  const [showFindProduct, setShowFindProduct] = useState(false)
   const [products, setProducts] = useState([])
 
   useEffect(() => {
@@ -35,10 +35,10 @@ const App = () => {
     return data
   }
 
-  // Add Product
-  const addProduct = async (product) => {
-    const res = await fetch('http://localhost:5000/products', {
-      method: 'POST',
+  // Find Product
+  const FindProduct = async (product) => {
+    const res = await fetch('http://localhost:5000/product/', {
+      method: 'GET',
       headers: {
         'Content-type': 'application/json',
       },
@@ -91,15 +91,15 @@ const App = () => {
     <Router>
       <div className='container'>
         <Header
-          onAdd={() => setShowAddProduct(!showAddProduct)}
-          showAdd={showAddProduct}
+          onFind={() => setShowFindProduct(!showFindProduct)}
+          showFind={showFindProduct}
         />
         <Routes>
           <Route
             path='/'
             element={
               <>
-                {showAddProduct && <AddProduct onAdd={addProduct} />}
+                {showFindProduct && <FindProduct onFind={FindProduct} />}
                 {products.length > 0 ? (
                   <Products
                     products={products}

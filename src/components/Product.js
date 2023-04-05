@@ -1,22 +1,16 @@
-import { FaTimes } from 'react-icons/fa'
 
-const Product = ({ product, onDelete, onToggle }) => {
-  return (
-    <div
-      className={`product ${product.size && 'size'}`}
-      onDoubleClick={() => onToggle(product.id)}
-     // onDoubleClick={() => onToggle(product.id)}
-    >
-      <h3>
-        {product.title}{' '}
-        <FaTimes
-          style={{ color: '#c01414', cursor: 'pointer' }}
-          onClick={() => onDelete(product.id)}
-        />
-      </h3>
-      <p>{product.price}</p>
-    </div>
-  )
-}
+const Product = ({ product}) => {
+        return (
+            <div className="product">
+                <img src={product.image} alt={product.title} />
+                <h3>{product.title}</h3>
+                <p class="description">{product.description}</p>
+                <p class="price">{product.price}</p>
+                <button>Add to cart</button>
+                <button>Remove from cart</button>
+                <button>Checkout</button>
+                <hr />
+            </div>)
+    }
 
 export default Product

@@ -8,7 +8,7 @@
 
 body {
   font-family: 'Helvetica', sans-serif;
-  background-color: rgb(43, 144, 226);
+  background-image: url("foliage-green-nature-4k-wallpaper-preview.jpeg");
 }
 
 .container {
@@ -16,7 +16,7 @@ body {
   margin: 30px auto;
   overflow: auto;
   min-height: 300px;
-  border: 5px solid rgb(0, 110, 255);
+  border: 5px solid rgb(9, 255, 0);
   
   padding: 30px;
   border-radius: 55px;
@@ -55,7 +55,13 @@ body {
   display: block;
   width: 100%;
 }
-
+.price{
+  font-size: smaller;
+  color: greenyellow;
+}
+.description{
+  background-color: rgb(234, 255, 0);
+}
 .task {
   background: #00eeff78;
   margin: 5px;
@@ -107,7 +113,10 @@ body {
   flex: 2;
   height: 20px;
 }
-
+image {
+  size: 125px;
+  width: 125px;
+}
 footer {
   margin-top: 30px;
   text-align: center;
