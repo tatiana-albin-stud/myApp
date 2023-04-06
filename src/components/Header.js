@@ -20,7 +20,7 @@ const Header = ({ title, onFind, showFind }) => {
 }
 
 Header.defaultProps = {
-  title: 'Product Tracker',
+  title: 'Shopping online',
 }
 
 Header.propTypes = {
