@@ -2,8 +2,9 @@ import { useState, useEffect } from 'react'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import Header from './components/Header'
 import Footer from './components/Footer'
+import Product from './components/Product'
 import Products from './components/Products'
-import FindProduct from './components/FindProduct'
+import ProductDetails from './components/ProductDetails'
 import About from './components/About'
 
 const App = () => {
@@ -96,6 +97,7 @@ const App = () => {
         />
         <Routes>
           <Route
+            exact
             path='/'
             element={
               <>
@@ -113,6 +115,7 @@ const App = () => {
             }
           />
           <Route path='/about' element={<About />} />
+          <Route path='/productDetails/:id' element={<ProductDetails />} />
         </Routes>
         <Footer />
       </div>

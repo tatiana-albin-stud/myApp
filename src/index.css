@@ -98,6 +98,7 @@ aside{
 .description{
   font-style:normal;
   padding: 5px;
+  text-align: left;
 }
 .task {
   background: #00eeff78;
@@ -152,11 +153,16 @@ aside{
   height: 20px;
 }
 img {
-  display: block;
+  display: flex;
   margin-left: auto;
   margin-right: auto;
   width: 30%;
   
+}
+.img-details{
+  display: flex;
+  flex-direction: row;
+  align-items: left;
 }
 footer {
   margin-top: 30px;
