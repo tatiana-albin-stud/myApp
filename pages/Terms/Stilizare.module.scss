@@ -1,0 +1,89 @@
+@import "../../styles/mixins.scss";
+
+.formWrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 3rem;
+}
+
+.textFieldsWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  h2{
+    text-align: center;
+  }
+
+#expand_button {
+  padding: 200 px;
+}
+
+h3 {
+  padding: 20px
+}
+
+#afisContinut {
+  padding: 20px;;
+  margin: 200px;
+}
+#continut {
+  padding: 200px;
+  margin: 20px;
+}
+
+#item{
+  padding: 300px;
+  margin: auto;
+}
+
+  .container {
+    max-width: 1300px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    
+  }
+
+
+  .box {
+    background-color: white;
+    max-width: 1000px;
+    margin-bottom: 25px;
+    padding: 10px;
+    box-shadow: 1px 1px 3px gray;
+    border-radius: 25px;
+  }
+
+  
+  
+  
+  @media only screen and (max-width: 1300px) {
+    .container {
+      max-width: 1000px;
+      justify-content: center;
+    }
+  }
+  
+  @media only screen and (max-width: 1000px) {
+    .container {
+      max-width: 700px;
+      justify-content: center;
+    }
+    .box {
+      width: 600px;
+    }
+  }
+  
+  @media only screen and (max-width: 700px) {
+    .container {
+      max-width: 400px;
+      justify-content: center;
+    }
+    .box {
+      width: 300px;
+    }
+  }
